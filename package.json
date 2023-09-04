@@ -1,0 +1,11 @@
+{
+  "name": "string_calulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "string-calculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
