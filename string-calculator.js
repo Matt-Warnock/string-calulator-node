@@ -6,10 +6,14 @@ class StringCalculator {
 
         if(string.match(/,/)) {
             const numbers = string.split(/,/)
-                                  .map(number => parseInt(number))
-            const firstNumber = numbers[0];
-            const secondNumber = numbers[1];
-            return  firstNumber + secondNumber;
+                                  .map(Number);
+            
+            let sum = 0;
+            numbers.forEach(number => {
+                sum += number;
+            });
+
+            return sum;
         }
 
         return result;
