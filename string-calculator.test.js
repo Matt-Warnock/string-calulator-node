@@ -22,6 +22,13 @@ describe('String Calculator', () => {
         expect(result).toBe(53);
     })
 
+    it('returns sum of double digit numbers', () => {
+        const stringCalculator = new StringCalculator;
+        const result = stringCalculator.add('53,21')
+
+        expect(result).toBe(74);
+    })
+
     xit('adds unknown amounts of numbers', () => {
         const stringCalculator = new StringCalculator;
         const result = stringCalculator.add('53,2,5,4,2,8,4,9,14')
