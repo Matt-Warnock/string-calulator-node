@@ -1,24 +1,19 @@
 class StringCalculator {
-    add(string) {
-        var result;
-        
-        result = string.length < 1 ? 0 : parseInt(string);
+  add(string) {
+    var result = 0;
 
-        if(string.match(/,/)) {
-            const numbers = string.split(/,/)
-                                  .map(Number);
-            
-            let sum = 0;
-            numbers.forEach(number => {
-                sum += number;
-            });
+    if (string.length < 1) return result;
+    if (!string.match(/,/)) return parseInt(string);
 
-            return sum;
-        }
+    const numbers = string
+      .split(/,/)
+      .map(Number)
+      .forEach((number) => {
+        result += number;
+      });
 
-        return result;
-    }
+    return result;
+  }
 }
-
 
 module.exports = StringCalculator;
