@@ -32,9 +32,16 @@ describe('String Calculator', () => {
 
         expect(result).toBe(101);
     })
+
     it('Returns sum of newline and comma separated numbers', () => {
         const result = stringCalculator.add('3\n4,10')
 
         expect(result).toBe(17);
+    })
+
+    xit('Separates numbers with custom separator', () => {
+        const result = stringCalculator.add('//;\n1;2')
+
+        expect(result).toBe(3);
     })
 })

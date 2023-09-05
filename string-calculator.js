@@ -1,17 +1,22 @@
 class StringCalculator {
   add(string) {
-    var result = 0;
+    let separators = /[,\n]/;
+    let result = 0;
 
     if (string.length < 1) return result;
 
-    this._extractNumbers(string).forEach((number) => {
+    //if (string.match(/^\\{2}.\n/)) {
+
+    //}
+
+    this._extractNumbers(string, separators).forEach((number) => {
       result += number;
     });
 
     return result;
   }
-  _extractNumbers(string) {
-    return string.split(/[,\n]/).map(Number);
+  _extractNumbers(string, separators) {
+    return string.split(separators).map(Number);
   }
 }
 
