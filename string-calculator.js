@@ -4,14 +4,14 @@ class StringCalculator {
 
     if (string.length < 1) return result;
 
-    const numbers = string
-      .split(/[,\n]/)
-      .map(Number)
-      .forEach((number) => {
-        result += number;
-      });
+    this._extractNumbers(string).forEach((number) => {
+      result += number;
+    });
 
     return result;
+  }
+  _extractNumbers(string) {
+    return string.split(/[,\n]/).map(Number);
   }
 }
 
