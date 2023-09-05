@@ -5,7 +5,7 @@ class StringCalculator {
     if (string.length < 1) return result;
 
     const numbers = string
-      .split(/,/)
+      .split(/[,\n]/)
       .map(Number)
       .forEach((number) => {
         result += number;
