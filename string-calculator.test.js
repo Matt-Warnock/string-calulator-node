@@ -39,7 +39,7 @@ describe('String Calculator', () => {
         expect(result).toBe(17);
     })
 
-    xit('Separates numbers with custom separator', () => {
+    it('Separates numbers with custom separator', () => {
         const result = stringCalculator.add('//;\n1;2')
 
         expect(result).toBe(3);
