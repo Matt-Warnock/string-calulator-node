@@ -4,6 +4,7 @@ class StringCalculator {
 
   add(string) {
     let result = 0;
+    let negativeNumbers = [];
 
     if (string.length < 1) return result;
 
@@ -11,14 +12,26 @@ class StringCalculator {
       string = this._extractCustomSeparatorFrom(string);
     }
 
-    this._extractNumbers(string).forEach((number) => {
+    const numbers = this._extractNumbers(string);
+
+    numbers.forEach((number) => {
       if (number < 0) {
-        throw new TypeError(`error: negatives not allowed: ${number}`);
+        negativeNumbers.push(number);
       }
       result += number;
     });
 
+    this.handleAny(negativeNumbers);
+
     return result;
+  }
+
+  handleAny(negativeNumbers) {
+    if (negativeNumbers.length > 0) {
+      const errorMessage = `error: negatives not allowed: ${negativeNumbers.toString()}`
+
+      throw new TypeError(errorMessage);
+    }
   }
 
   _extractCustomSeparatorFrom(string) {
