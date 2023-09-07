@@ -12,6 +12,9 @@ class StringCalculator {
     }
 
     this._extractNumbers(string).forEach((number) => {
+      if (number < 0) {
+        throw new TypeError;
+      }
       result += number;
     });
 

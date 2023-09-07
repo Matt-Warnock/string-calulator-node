@@ -44,4 +44,12 @@ describe('String Calculator', () => {
 
         expect(result).toBe(3);
     })
+
+    it('Throws an exception when passing a negative number', () => {
+        const result = () => {
+            stringCalculator.add('1,-2');   
+        }
+
+        expect(result).toThrow(TypeError);
+    })
 })
