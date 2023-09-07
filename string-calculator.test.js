@@ -45,11 +45,14 @@ describe('String Calculator', () => {
         expect(result).toBe(3);
     })
 
-    it('Throws an exception when passing a negative number', () => {
+    it('Throws an exception when passing a negative number with number in error message', () => {
+        const negativeNumber = -2;
+
         const result = () => {
-            stringCalculator.add('1,-2');   
+            stringCalculator.add(`1,${negativeNumber}`);
         }
 
         expect(result).toThrow(TypeError);
+        expect(result).toThrow(`error: negatives not allowed: ${negativeNumber}`);
     })
 })

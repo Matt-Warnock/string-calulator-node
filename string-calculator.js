@@ -13,7 +13,7 @@ class StringCalculator {
 
     this._extractNumbers(string).forEach((number) => {
       if (number < 0) {
-        throw new TypeError;
+        throw new TypeError(`error: negatives not allowed: ${number}`);
       }
       result += number;
     });
