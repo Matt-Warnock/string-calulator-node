@@ -21,12 +21,12 @@ class StringCalculator {
       result += number;
     });
 
-    this.handleAny(negativeNumbers);
+    this._handleAny(negativeNumbers);
 
     return result;
   }
 
-  handleAny(negativeNumbers) {
+  _handleAny(negativeNumbers) {
     if (negativeNumbers.length > 0) {
       const errorMessage = `error: negatives not allowed: ${negativeNumbers.toString()}`
 
